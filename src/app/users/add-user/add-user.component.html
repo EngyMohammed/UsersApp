@@ -1,0 +1,19 @@
+<img [src]='imgsrc'>
+<form [formGroup]="userForm">
+  <div class="form-group">
+     <label>Name</label>
+     <input type="text" [ngClass]="{'border-error':(userForm.controls.name.invalid && userForm.controls.name?.errors.required  && (!userForm.controls.name?.pristine )) || (userForm.controls.name.invalid && userForm.controls.name?.errors.maxlength  && (!userForm.controls.name?.pristine)),'success':userForm.controls.name.valid && !userForm.controls.name?.pristine }" formControlName="name" class="form-control" placeholder="User Name">
+   <em 
+  *ngIf="(userForm.controls.name.invalid && userForm.controls.name?.errors.required  && (!userForm.controls.name?.pristine ))"
+  class="invalid">Please enter Name</em>
+  </div>
+  <div class="form-group">
+     <label>Job title</label>
+     <input type="text" class="form-control" placeholder="job" [ngClass]="{'border-error':(userForm.controls.job.invalid && userForm.controls.job?.errors.required  && (!userForm.controls.job?.pristine )) || (userForm.controls.job.invalid && userForm.controls.job?.errors.maxlength  && (!userForm.controls.job?.pristine)),'success':userForm.controls.job.valid && !userForm.controls.job?.pristine }" formControlName="job">
+     <em   *ngIf="(userForm.controls.job.invalid && userForm.controls.job?.errors.required  && (!userForm.controls.job?.pristine ))"
+  class="invalid">Please enter job</em>
+  </div>
+  <button type="submit" class="btn btn-default" [disabled]="userForm.invalid">Cancel</button>
+  <button  class="btn btn-primary" (click)=addUser()>Add</button>
+
+</form>

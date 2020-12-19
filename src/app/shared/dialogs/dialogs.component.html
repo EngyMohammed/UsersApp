@@ -1,0 +1,22 @@
+<header class="modal-header">
+  <h3 class="modal-title lms-full-width lms-truncate" title="{{dialogData.header}}" >{{dialogData.header}}</h3>
+  <button type="button" class="close" id="btnConfirmationClose" (click)="cancel()" title="{{'Close' | customtranslate}}">
+    ×<span class="sr-only">{{'Close' | customtranslate}} </span>
+  </button>
+
+</header>
+<!-- # end Popup header -->
+<!-- Popup Body -->
+<div class="modal-body">
+  <p id="txtConfirmationMsg"> {{dialogData.message}} </p>
+</div>
+<!-- # end Popup Body -->
+<!-- Popup Footer -->
+<footer class="modal-footer lms-padding-top-15">
+  <button id="btnDialogOk" *ngIf="dialogData.okBtnText" class="btn btn-primary lms-qb-btn-primary " (click)="ok()">
+      {{dialogData.okBtnText}}
+  </button>
+  <button id="btnDialogCancel" *ngIf="dialogData.cancelBtnText" class="btn btn-qb-default btn-default" (click)="cancel()">
+      {{dialogData.cancelBtnText}}
+  </button>
+</footer>

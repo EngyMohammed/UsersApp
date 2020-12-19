@@ -1,0 +1,57 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+ 
+<div class="row">
+  <ul class='nav nav-pills'>
+    <li><a [routerLink]="['/Home']" routerLinkActive="router-link-active">Home</a>/</li>
+    <li><a [routerLink]="['/Dashboard']" routerLinkActive="router-link-active">Dashboard</a> </li>
+   </ul>
+  </div>
+  <div class="row">
+     <div class="col-7">
+       <h2>Users List</h2>
+     </div>
+     <div class="col-5">
+       <button class="btn btn-primary" (click)="addNewUser()">
+         <em class="fa fa-plus"></em> New User
+       </button>
+     </div>
+
+</div>
+</nav>
+
+<ul class="responsive-table">
+  <li class="table-header row">
+     <div class="col-xs-7">
+         <span>Users</span>
+     </div>
+     <div class="col-xs-5">
+      <span>Actions</span>
+  </div>
+</li>
+  <li class="row table-row" *ngFor="let user of users">
+  <div class="col-xs-3">
+    <img [src]="user.avatar" alt={{user.first_name}}>
+  </div>
+  <div class="col-xs-5">{{user.first_name}} {{user.last_name}}</div>
+  <div class="col-xs-4">
+    
+  </div>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
