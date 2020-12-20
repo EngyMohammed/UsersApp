@@ -48,7 +48,7 @@
   <h4>{{name}}</h4>
  
     <button class="btn btn-primary m-r-10 btn-round" (click)="editUser(userId)" title="edit"><em class="fa fa-pen"></em> Edit</button>
-    <button class="btn btn-secondary  btn-round" (click)="deleteUser(userId)"title="delete"><em class="fa fa-trash"></em> Delete</button>
+    <button class="btn btn-secondary  btn-round" (click)="deleteUser(user.id,user.first_name,user.last_name)"title="delete"><em class="fa fa-trash"></em> Delete</button>
    
   </div>  
 </div>

@@ -12,10 +12,11 @@ constructor(private http: HttpClient) { }
 login(userName: string, password: string): Observable<any> {
   return this.http.post<any>('https://reqres.in/api/login', {'email': userName, 'password': password})
   .pipe(map(user => {
-    // login successful if there's a jwt token in the response
+    // login successful
     if (user && user.token) {
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        // store user details
         localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('name', userName);
     }
 
     return user;

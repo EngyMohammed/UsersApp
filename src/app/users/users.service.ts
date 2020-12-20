@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { IresponseModel  } from './user';
+import { Observable, Subject } from 'rxjs';
+import { IresponseModel, Iuser } from './user';
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-
+  public EditUser$: Subject<any> = new Subject<any>();
+  public AddUser$: Subject<any> = new Subject<any>();
 constructor(private http: HttpClient) { }
 getAllUsers(pagenumber): Observable<IresponseModel> {
  return this.http.get <IresponseModel>('https://reqres.in/api/users',

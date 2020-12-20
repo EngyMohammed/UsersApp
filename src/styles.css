@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-html,body,.container{
+html,body{
     height:100%;
 }
 body{
@@ -10,6 +10,7 @@ body{
 }
 .align-center{
     align-items:center;
+    justify-content: center;
 }
 .invalid {
     color: #ea1c1c;

@@ -49,6 +49,7 @@ addUser() {
   this.usersService.addUser(this.name, this.job).subscribe(
     res => {
       this.toastr.success('User added successfully');
+      this.usersService.AddUser$.next(res);
       this.modal.dismiss();
     }
   );
@@ -60,6 +61,7 @@ updateUser() {
   this.usersService.editUser(this.Id, this.name, this.job).subscribe(
     res => {
       this.toastr.success('User updated successfully');
+      this.usersService.EditUser$.next(res);
       this.modal.dismiss();
     }
   );
