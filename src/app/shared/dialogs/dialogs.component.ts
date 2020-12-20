@@ -2,15 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 export interface IDialogInformation {
-  header: string;
+  data: string;
   okBtnText: string;
   cancelBtnText: string;
   message: string;
 }
 @Component({
   selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: []
+  templateUrl: './dialog.component.html'
 })
 export class DialogComponent implements OnInit {
   @Input() dialogData: IDialogInformation;

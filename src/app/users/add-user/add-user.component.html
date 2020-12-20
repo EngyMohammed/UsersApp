@@ -1,6 +1,7 @@
-<img [src]='imgsrc'>
 <form [formGroup]="userForm">
-  <div class="form-group">
+<div class="modal-body">
+<img [src]='imgSrc' alt="userImage">
+<div class="form-group">
      <label>Name</label>
      <input type="text" [ngClass]="{'border-error':(userForm.controls.name.invalid && userForm.controls.name?.errors.required  && (!userForm.controls.name?.pristine )) || (userForm.controls.name.invalid && userForm.controls.name?.errors.maxlength  && (!userForm.controls.name?.pristine)),'success':userForm.controls.name.valid && !userForm.controls.name?.pristine }" formControlName="name" class="form-control" placeholder="User Name">
    <em 
@@ -13,7 +14,10 @@
      <em   *ngIf="(userForm.controls.job.invalid && userForm.controls.job?.errors.required  && (!userForm.controls.job?.pristine ))"
   class="invalid">Please enter job</em>
   </div>
-  <button type="submit" class="btn btn-default" [disabled]="userForm.invalid">Cancel</button>
-  <button  class="btn btn-primary" (click)=addUser()>Add</button>
-
+</div>
+<footer class="modal-footer">
+  <button class="btn btn-secondary btn-round" (click)=cancel()>Cancel</button>
+  <button  class="btn btn-primary btn-round" (click)=addUser() [disabled]="userForm.invalid" *ngIf="!editMode">Add</button>
+  <button  class="btn btn-primary btn-round" (click)=updateUser() [disabled]="userForm.invalid" *ngIf="editMode">Save</button>
+</footer>
 </form>

@@ -1,0 +1,14 @@
+
+<div class="modal-body text-center">
+  <p> {{dialogData.message}} </p>
+  <h4 *ngIf="dialogData.data"> {{dialogData.data}} </h4>
+</div>
+<footer class="modal-footer">
+  <button *ngIf="dialogData.cancelBtnText" class="btn btn-round btn-secondary" (click)="cancel()">
+    {{dialogData.cancelBtnText}}
+</button>
+  <button *ngIf="dialogData.okBtnText" class="btn btn-primary btn-round " (click)="ok()">
+      {{dialogData.okBtnText}}
+  </button>
+ 
+</footer>

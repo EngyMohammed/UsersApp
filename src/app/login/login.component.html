@@ -1,6 +1,6 @@
 <div class="container login-container">
 <div class="row">
-<div class="col-md-6 col-sm-12 bg-image">
+<div class="col-md-6 bg-image">
     
  </div>
  
@@ -24,7 +24,7 @@
              class="invalid">Please enter password</em>
              </div>
              <button type="submit" class="btn btn-link" [disabled]="loginForm.invalid">Forget Password</button>
-             <button  class="btn btn-primary" (click)=login()>Login</button>
+             <button  class="btn btn-primary btn-round" (click)=login()>Login</button>
             <div *ngIf="error"><span  class="invalid" >{{error}}</span></div> 
           </form>
       </div>

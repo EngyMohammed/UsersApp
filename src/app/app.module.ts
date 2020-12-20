@@ -7,9 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './login/login.guard';
-import { AddUserComponent } from './users/add-user/add-user.component';
 import { UsersModule } from './users/users.module';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     ]),
     HttpClientModule,
     ReactiveFormsModule,
-    UsersModule
+    UsersModule,
   ],
   providers: [NgbModal],
   bootstrap: [AppComponent]

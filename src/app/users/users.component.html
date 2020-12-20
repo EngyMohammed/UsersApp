@@ -1,43 +1,67 @@
-<nav class='navbar navbar-expand navbar-light bg-light'>
- 
-<div class="row">
+<nav class='page-header'>
+<div class="container">
   <ul class='nav nav-pills'>
     <li><a [routerLink]="['/Home']" routerLinkActive="router-link-active">Home</a>/</li>
     <li><a [routerLink]="['/Dashboard']" routerLinkActive="router-link-active">Dashboard</a> </li>
    </ul>
-  </div>
-  <div class="row">
-     <div class="col-7">
+  
+  <div class="row p-t-10">
+     <div class="col-md-7 col-6">
        <h2>Users List</h2>
      </div>
-     <div class="col-5">
-       <button class="btn btn-primary" (click)="addNewUser()">
+     <div class="col-md-5 col-6">
+       <button class="btn btn-primary float-right" (click)="addNewUser()">
          <em class="fa fa-plus"></em> New User
        </button>
      </div>
 
 </div>
+</div>
 </nav>
-
-<ul class="responsive-table">
-  <li class="table-header row">
-     <div class="col-xs-7">
+<div class="container">
+  <div class="list shadow">
+<ul  [ngClass]="{'selected':showDetails}">
+  <li class="list-header row">
+     <div class="col-md-9 col-7">
          <span>Users</span>
      </div>
-     <div class="col-xs-5">
+     <div class="col-md-3 col-5">
       <span>Actions</span>
   </div>
 </li>
-  <li class="row table-row" *ngFor="let user of users">
-  <div class="col-xs-3">
+  <li class="row list-row" *ngFor="let user of users" (click)="getUser(user.id)" [ngClass]="{'selectedRow':selectionId == user.id}">
+  <div class="col-md-9 col-7">
     <img [src]="user.avatar" alt={{user.first_name}}>
+    <span>{{user.first_name}} {{user.last_name}}</span>
   </div>
-  <div class="col-xs-5">{{user.first_name}} {{user.last_name}}</div>
-  <div class="col-xs-4">
-    
+
+  <div class="col-md-3 col-5">
+    <button class="btn btn-secondary m-r-10" (click)="editUser(user.id)" title="edit"><em class="fa fa-pen"></em></button>
+    <button class="btn btn-secondary  m-r-10" (click)="deleteUser(user.id,user.first_name,user.last_name)"title="delete"><em class="fa fa-trash"></em></button>
+    <a class="float-right fa-2x line-height-35" (click)="getUser(user.id)" title="show details"><em class="fa fa-angle-right"></em></a>
   </div>
 </li>
 </ul>
+<div class="user-details" *ngIf="showDetails">
+  <button class="btn btn-link float-right" (click)="closeDetails()"><em class="fa fa-times"></em></button>
+  <div class="text-center user-info"><img [src]="imgSrc" alt={{name}} class="user-img">
+  <h4>{{name}}</h4>
+ 
+    <button class="btn btn-primary m-r-10 btn-round" (click)="editUser(userId)" title="edit"><em class="fa fa-pen"></em> Edit</button>
+    <button class="btn btn-secondary  btn-round" (click)="deleteUser(userId)"title="delete"><em class="fa fa-trash"></em> Delete</button>
+   
+  </div>  
+</div>
+<!--loading mode-->
+<div class="col-12 lms-text-center" *ngIf="loading">
+  <div class="text-center router-animation-loader"><em
+      class="fa loading-indicator"></em>
+      <span>loading more users</span>
+  </div>
+</div>
+<!--/loading mode-->
+</div>
+</div>
 
 
 
