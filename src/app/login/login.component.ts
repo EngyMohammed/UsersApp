@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         // navigate to  return url
         this.router.navigate([this.returnUrl]);
+        this.loginService.loginState$.next(data);
         this.error = '';
     },
     // show error in login fail

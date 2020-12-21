@@ -39,15 +39,14 @@
     background-color: #F5F5F5; 
 }
 .list-row.selectedRow  img{
-border-color: #fff;
+border:1px solid #fff;
 }
 .list-row.selectedRow {
     background-color: #8E44AD;
     color: #fff;
-   
-    border-radius: 15px;
+     border-radius: 15px;
 }
-.list-row.selectedRow  a{
+.list-row.selectedRow  a,.list-row.selectedRow  span{
     color:#fff;
 }
 .list-row.selectedRow  button{
