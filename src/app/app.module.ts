@@ -19,8 +19,8 @@ import {  NgbModal } from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'Dashboard', component: UsersComponent, canActivate: [AuthGuard] },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: '**', redirectTo: 'login', pathMatch: 'full' }
+      { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
+      { path: '**', redirectTo: 'Dashboard', pathMatch: 'full' }
     ]),
     HttpClientModule,
     ReactiveFormsModule,
