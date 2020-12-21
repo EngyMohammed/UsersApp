@@ -11,12 +11,13 @@
     position: relative;
 }
 .list-header span{
-   color: #96A1A2;
-   font-size: 14px;
+    color: #7F8C8D;
+    font-family: ".SF NS Display";
+    font-size: 12px;
 }
 .list-row img{
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 55px;
+    max-height: 55px;
     border-radius: 50%;
     margin-right:10px;
 }
@@ -25,6 +26,11 @@
    border-bottom:1px solid #dedbdb;
    cursor: pointer;
    margin-top: 10px;
+}
+.list-row span{
+    color: #34495E;
+  font-family: ".SF NS Display";
+  font-size: 15px;
 }
 .line-height-35{
     line-height: 35px;
@@ -60,8 +66,8 @@ border-color: #fff;
     width: calc(100% - 228px);
 }
 .user-img{
-    width:130px;
-    height: 130px;
+    width:127px;
+    height: 127px;
     border-radius:50%;
 }
 .user-info{
@@ -69,6 +75,9 @@ border-color: #fff;
 }
 .user-info h4{
     padding: 15px 30px;
+    color: #34495E;
+  font-family: ".SF NS Display";
+  font-size: 25px;
 }
 .loading-indicator {
    animation: fa-spin 1s infinite steps(8);
@@ -84,4 +93,12 @@ border-color: #fff;
 }
 .router-animation-loader{
     color:#8E44AD;
+}
+.nav-pills a{
+    font-size: 12px;
+}
+.nav-pills h2{
+    color:#34495E;
+    font-family: ".SF NS Display";
+  font-size: 30px;
 }

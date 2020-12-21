@@ -9,3 +9,8 @@ img{
 .modal-body{
     padding-top: 50px;
 }
+label{
+    color: #7F8C8D;
+    font-family: ".SF NS Display";
+    font-size: 14px;
+}
